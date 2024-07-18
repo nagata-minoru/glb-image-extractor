@@ -18,7 +18,8 @@ const FileUploader: React.FC<FileUploaderProps> = ({ setExtractedImage }) => {
 
     try {
       const arrayBuffer = await file.arrayBuffer()
-      const gltf = await decodeGLB(arrayBuffer)
+      const uint8Array = new Uint8Array(arrayBuffer)
+      const gltf = await decodeGLB(uint8Array)
       const imageData = await getTextureGLTF(gltf)
 
       if (imageData) {
