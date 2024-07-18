@@ -21,7 +21,7 @@ GLB Image Extractor は、GLB（GL Transmission Format Binary）ファイルか�
 1. リポジトリをクローンします：
 
 ```bash
-git clone https://github.com/yourusername/glb-image-extractor.git
+git clone https://github.com/nagata-minoru/glb-image-extractor.git
 cd glb-image-extractor
 ```
 
