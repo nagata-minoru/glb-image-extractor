@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# GLB Image Extractor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GLB Image Extractor は、GLB（GL Transmission Format Binary）ファイルからテクスチャ画像を抽出するシンプルな Web アプリケーションです。このアプリケーションは React、TypeScript、Vite を使用して構築されています。
 
-Currently, two official plugins are available:
+## 特徴
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- GLBファイルのアップロードと処理
+- 抽出されたテクスチャ画像の表示
+- 軽量で使いやすいインターフェース
+- 淡い黄色を基調とした柔らかいデザイン
 
-## Expanding the ESLint configuration
+## 使用技術
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Vite
+- [GLTF/GLB Utility](https://github.com/code4fukui/GLTF) by code4fukui
 
-- Configure the top-level `parserOptions` property like this:
+## セットアップ
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. リポジトリをクローンします：
+
+```bash
+git clone https://github.com/yourusername/glb-image-extractor.git
+cd glb-image-extractor
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. 依存関係をインストールします：
+
+```bash
+npm install
+```
+
+3. 開発サーバーを起動します：
+
+```bash
+npm run dev
+```
+
+4. ブラウザで `http://localhost:5173` を開きます。
+
+## 使用方法
+
+1. アプリケーションのメイン画面で「ファイルを選択」ボタンをクリックします。
+2. GLBファイルを選択してアップロードします。
+3. アプリケーションがファイルを処理し、抽出されたテクスチャ画像を表示します。
+
+## 注意事項
+
+- このアプリケーションは、GLBファイル内の最初のテクスチャ画像のみを抽出します。
+- 大きなファイルの処理には時間がかかる場合があります。
+- すべてのGLBファイルにテクスチャ画像が含まれているわけではありません。
+
+## 今後の改善点
+
+- 複数のテクスチャ画像の抽出と表示
+- 抽出した画像のダウンロード機能
+- ドラッグアンドドロップでのファイルアップロード
+- エラーハンドリングの改善
+
+## ライセンス
+
+このプロジェクトは [MIT ライセンス](LICENSE) の下で公開されています。
+
+## 謝辞
+
+このプロジェクトは [code4fukui](https://github.com/code4fukui) の GLTF/GLB ユーティリティを使用しています。
