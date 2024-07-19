@@ -28,3 +28,12 @@ export async function decodeGLB(bin: ArrayBuffer) {
   await initModules();
   return GLB.decode(bin);
 }
+
+export function replaceTexture(gltf: any, newTextureData: Uint8Array): any {
+  GLTF.setTexture(gltf, newTextureData)
+  return gltf
+}
+
+export async function encodeGLB(gltf: any): Promise<ArrayBuffer> {
+  return new Promise(async resolve => resolve(await GLB.encode(gltf)))
+}

@@ -5,9 +5,10 @@ import { decodeGLB, getTextureGLTF } from '../gltf'
 
 interface FileUploaderProps {
   setExtractedImage: (imageData: string) => void
+  setOriginalGLB: (glb: ArrayBuffer) => void
 }
 
-const FileUploader: React.FC<FileUploaderProps> = ({ setExtractedImage }) => {
+const FileUploader: React.FC<FileUploaderProps> = ({ setExtractedImage, setOriginalGLB }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +19,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ setExtractedImage }) => {
 
     try {
       const arrayBuffer = await file.arrayBuffer()
+      setOriginalGLB(arrayBuffer) // 元のGLBデータを保存
       const uint8Array = new Uint8Array(arrayBuffer)
       const gltf = await decodeGLB(uint8Array)
       const imageData = await getTextureGLTF(gltf)
