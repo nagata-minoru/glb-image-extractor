@@ -9,7 +9,7 @@ function App() {
   const [originalGLB, setOriginalGLB] = useState<ArrayBuffer | null>(null)
   const [scale, setScale] = useState(1)
 
-  const handleScaleDown = () => setScale(prevScale => Math.max(0.1, prevScale - 0.1))
+  const handleScaleChange = (event: React.ChangeEvent<HTMLInputElement>) => setScale(parseFloat(event.target.value))
 
   const handleRegenerateGLB = async () => {
     if (!originalGLB || !extractedImage) return
@@ -65,7 +65,21 @@ function App() {
       {extractedImage && (
         <>
           <ImageDisplay imageData={extractedImage} scale={scale} />
-          <button onClick={handleScaleDown}>縮小</button>
+
+          <div className="mb-3">
+            <label htmlFor="scaleRange" className="form-label">縮小率: {scale.toFixed(2)}</label>
+            <input
+              type="range"
+              className="form-range"
+              id="scaleRange"
+              min="0.1"
+              max="1"
+              step="0.01"
+              value={scale}
+              onChange={handleScaleChange}
+            />
+          </div>
+
           <button onClick={handleRegenerateGLB}>GLBファイルを再生成</button>
         </>
       )}
