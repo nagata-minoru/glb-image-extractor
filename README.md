@@ -1,11 +1,13 @@
 # GLB Image Extractor
 
-GLB Image Extractor は、GLB（GL Transmission Format Binary）ファイルからテクスチャ画像を抽出するシンプルな Web アプリケーションです。このアプリケーションは React、TypeScript、Vite を使用して構築されています。
+GLB Image Extractor は、GLB（GL Transmission Format Binary）ファイルからテクスチャ画像を抽出し、修正して再度GLBファイルを生成するWeb アプリケーションです。このアプリケーションは React、TypeScript、Vite、Bootstrap 5 を使用して構築されています。
 
 ## 特徴
 
 - GLBファイルのアップロードと処理
 - 抽出されたテクスチャ画像の表示
+- テクスチャ画像のサイズ調整機能
+- 修正したテクスチャで新しいGLBファイルを生成
 - 軽量で使いやすいインターフェース
 - 淡い黄色を基調とした柔らかいデザイン
 
@@ -14,6 +16,7 @@ GLB Image Extractor は、GLB（GL Transmission Format Binary）ファイルか�
 - React
 - TypeScript
 - Vite
+- Bootstrap 5
 - [GLTF/GLB Utility](https://github.com/code4fukui/GLTF) by code4fukui
 
 ## セットアップ
@@ -44,6 +47,8 @@ npm run dev
 1. アプリケーションのメイン画面で「ファイルを選択」ボタンをクリックします。
 2. GLBファイルを選択してアップロードします。
 3. アプリケーションがファイルを処理し、抽出されたテクスチャ画像を表示します。
+4. スライダーを使用してテクスチャ画像のサイズを調整します。
+5. 「GLBファイルを再生成」ボタンをクリックして、修正したテクスチャを含む新しいGLBファイルを生成し、ダウンロードします。
 
 ## 注意事項
 
