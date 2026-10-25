@@ -8,6 +8,10 @@ updates:
       interval: weekly
     cooldown:
       default-days: 14
+    # typescript-eslint が TypeScript 7 に対応するまで見送る
+    ignore:
+      - dependency-name: typescript
+        versions: ['>=7']
     groups:
       dependencies:
         patterns: ['*']
